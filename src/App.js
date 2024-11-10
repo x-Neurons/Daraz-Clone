@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import Content from './component/Content';
+import Navbar from './component/Navbar';
+import Slider from './component/Slider';
+import {product} from "./data";
+import {header} from "./header";
+import Header from './component/Header';
+import Bar from './component/Bar';
+
 
 function App() {
+  const [dataapi , setDataapi] = useState(product);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Slider/>
+      <Bar/>
+      <Header pro = {header}/>
+      <Content pro = {dataapi}/>
     </div>
   );
 }
